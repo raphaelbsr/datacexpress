@@ -19,11 +19,9 @@ steps:
     npm install    
   displayName: 'npm install and build'
 
-- task: AzureWebAppContainer@1
+- task: Docker@2
   inputs:
-    azureSubscription: 'Pago pelo Uso(956296c1-0503-4a85-9a02-9d3c7ea91c09)'
-    appName: 'datacexpress'
-    deployToSlotOrASE: true
-    resourceGroupName: 'DataCContainersResourceGroup'
-    slotName: 'production'
-    containers: 'express'
+    containerRegistry: 'DataCContainerConnection'
+    repository: 'express'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
