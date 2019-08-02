@@ -18,3 +18,12 @@ steps:
 - script: |
     npm install    
   displayName: 'npm install and build'
+
+- task: AzureWebAppContainer@1
+  inputs:
+    azureSubscription: 'Pago pelo Uso (956296c1-0503-4a85-9a02-9d3c7ea91c09)'
+    appName: 'datacexpress'
+    deployToSlotOrASE: true
+    resourceGroupName: 'DataCContainersResourceGroup'
+    slotName: 'production'
+    containers: 'express'
