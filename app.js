@@ -6,5 +6,5 @@ app.get("/", function(req, res) {
 });
 
 app.listen(3000, function() {
-  console.log("Testing CI/CD Versão 6!");
+  console.log("Working");
 });
